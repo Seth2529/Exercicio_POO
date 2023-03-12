@@ -1,28 +1,12 @@
-﻿using Exercicio3;
+using Exercicio3;
 
 ManipularArquivo Arquivo = new ManipularArquivo();
-Arquivo.EnderecoNomeArquivo = "Escreva o diretório para chegar no arquivo desejado";
-Arquivo.Conteudo = "Este é o conteúdo do arquivo .txt";
+Arquivo.Conteudo = "Ghost";
+Arquivo.EnderecoNomeArquivo = @"C:\Users\erics\Documents\arquivo\arquivo.txt";
 
-bool salvar = Arquivo.SalvarDadoseArquivos();
-if (salvar)
+if (Arquivo.SalvarDadoseArquivos())
 {
-    Console.WriteLine("Mudanças salva com êxito.");
+    Console.WriteLine("Arquivo modificado com êxito!");
 }
-else
-{
-    Console.WriteLine("As mudanças não conseguiram ser aplicadas");
-}
-
-string pesquisararquivo = Arquivo.PesquisarConteudoArquivo(Arquivo.EnderecoNomeArquivo);
-if (pesquisararquivo != "")
-{
-    Console.WriteLine("Arquivo encontrado com sucesso!");
-    Console.WriteLine(pesquisararquivo);
-}
-else
-{
-    Console.WriteLine("Arquivo não encontrado");
-}
-
-Console.ReadKey();
+Console.WriteLine(Arquivo.PesquisarConteudoArquivo(Arquivo.EnderecoNomeArquivo))
+    
